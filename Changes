@@ -1,0 +1,8 @@
+Revision history for Async-MergePoint
+
+0.02    BUGFIXES:
+         * Remember to rename IO::Async::MergePoint as Async::MergePoint in
+           test scripts
+
+0.01    First version, released on an unsuspecting world.
+

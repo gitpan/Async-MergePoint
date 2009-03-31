@@ -1,6 +1,6 @@
 ---
 name: Async-MergePoint
-version: 0.01
+version: 0.02
 author:
   - 'Paul Evans E<lt>leonerd@leonerd.org.ukE<gt>'
 abstract: resynchronise diverged control flow
@@ -13,7 +13,7 @@ build_requires:
 provides:
   Async::MergePoint:
     file: lib/Async/MergePoint.pm
-    version: 0.01
+    version: 0.02
 generated_by: Module::Build version 0.3
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
