@@ -1,5 +1,11 @@
 Revision history for Async-MergePoint
 
+0.03    CHANGES:
+         * use warnings
+         * Allow setting 'on_finished' handler after creation; allow extending
+           the 'needs' keys until then.
+         * Various small updates to keep CPANTS happy
+
 0.02    BUGFIXES:
          * Remember to rename IO::Async::MergePoint as Async::MergePoint in
            test scripts

@@ -2,16 +2,10 @@
 
 use strict;
 
-use Test::More tests => 11;
+use Test::More tests => 9;
 use Test::Exception;
 
 use Async::MergePoint;
-
-dies_ok( sub { Async::MergePoint->new( on_finished => sub { "DUMMY" } ) },
-         'No needs' );
-
-dies_ok( sub { Async::MergePoint->new( needs => ['foo'] ) },
-         'No on_finished' );
 
 dies_ok( sub { Async::MergePoint->new( needs => "hello", on_finished => sub { "DUMMY" } ) },
          'needs not ARRAY' );
