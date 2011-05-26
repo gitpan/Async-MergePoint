@@ -3,15 +3,15 @@
 use strict;
 
 use Test::More tests => 9;
-use Test::Exception;
+use Test::Fatal;
 
 use Async::MergePoint;
 
-dies_ok( sub { Async::MergePoint->new( needs => "hello", on_finished => sub { "DUMMY" } ) },
-         'needs not ARRAY' );
+ok( exception { Async::MergePoint->new( needs => "hello", on_finished => sub { "DUMMY" } ) },
+    'needs not ARRAY' );
 
-dies_ok( sub { Async::MergePoint->new( needs => ['foo'], on_finished => "goodbye" ) },
-         'on_finished not CODE' );
+ok( exception { Async::MergePoint->new( needs => ['foo'], on_finished => "goodbye" ) },
+    'on_finished not CODE' );
 
 my %items;
 
@@ -51,5 +51,5 @@ $merge = Async::MergePoint->new(
    on_finished => sub { "DUMMY" },
 );
 
-dies_ok( sub { $merge->done( "orange" => 1 ) },
-         'done something not needed fails' );
+ok( exception { $merge->done( "orange" => 1 ) },
+    'done something not needed fails' );

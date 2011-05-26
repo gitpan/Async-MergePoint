@@ -3,7 +3,7 @@
 use strict;
 
 use Test::More tests => 5;
-use Test::Exception;
+use Test::Fatal;
 
 use Async::MergePoint;
 
@@ -23,8 +23,8 @@ $merge->close( on_finished => sub { $done = 2 } );
 
 is( $done, 1, 'Closing a not ready MergePoint does not callback' );
 
-dies_ok( sub { $merge->needs( 'bar' ) },
-         'Extending an already-closed MergePoint fails' );
+ok( exception { $merge->needs( 'bar' ) },
+    'Extending an already-closed MergePoint fails' );
 
 $merge->done( 'foo' );
 

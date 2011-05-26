@@ -3,7 +3,7 @@
 use strict;
 
 use Test::More tests => 5;
-use Test::Exception;
+use Test::Fatal;
 
 use Async::MergePoint;
 
@@ -32,5 +32,5 @@ $merge = Async::MergePoint->new(
    on_finished => sub { },
 );
 
-dies_ok( sub { $merge->close( on_finished => sub { } ) },
-         'closing an already-closed MergePoint fails' );
+ok( exception { $merge->close( on_finished => sub { } ) },
+    'closing an already-closed MergePoint fails' );

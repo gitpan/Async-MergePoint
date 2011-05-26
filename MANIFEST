@@ -10,3 +10,4 @@ t/01mergepoint.t
 t/02lateclose.t
 t/03lateneeds.t
 t/99pod.t
+META.json

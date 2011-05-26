@@ -1,14 +1,14 @@
 #  You may distribute under the terms of either the GNU General Public License
 #  or the Artistic License (the same terms as Perl itself)
 #
-#  (C) Paul Evans, 2007-2009 -- leonerd@leonerd.org.uk
+#  (C) Paul Evans, 2007-2011 -- leonerd@leonerd.org.uk
 
 package Async::MergePoint;
 
 use strict;
 use warnings;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use Carp;
 
@@ -217,11 +217,6 @@ sub done
    }
 }
 
-# Keep perl happy; keep Britain tidy
-1;
-
-__END__
-
 =head1 EXAMPLES
 
 =head2 Asynchronous Plugins
@@ -270,3 +265,7 @@ Whereas, to handle the event asynchronously the plugin can instead perform:
 =head1 AUTHOR
 
 Paul Evans <leonerd@leonerd.org.uk>
+
+=cut
+
+0x55AA;
